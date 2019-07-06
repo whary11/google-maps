@@ -34,6 +34,7 @@ Vue.use(VueGoogleMaps, {
   // installComponents: true,
 })
 
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -47,6 +48,8 @@ Vue.use(VueGoogleMaps, {
 
 Vue.component('maps-component', require('./components/Maps').default);
 Vue.component('autocomplete-component', require('./components/Autocomplete').default);
+Vue.component('direccion-render-component', require('./components/DireccionRender').default);
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

@@ -33,8 +33,15 @@
                 </div>
             @endif
 
+            <div class="top-left links">
+                    <a href="{{ url('/autocompletador') }}">Autocompletador</a>
+                    <a href="{{ url('/direccionrender') }}">Autocompletador</a>
+                    {{-- <a href="{{ route('login') }}">Login</a>
+                    <a href="{{ route('register') }}">Register</a> --}}
+            </div>
+
             <div id="app">
-                    <autocomplete-component></autocomplete-component>
+                    <direccion-render-component></direccion-render-component>
                 {{-- <maps-component></maps-component> --}}
             </div>
         </div>

@@ -12,5 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('maps');
 });
+Route::get('/autocompletador', function () {
+    return view('autocompletador');
+})->name('autocompletador');
+
+Route::get('/direccionrender', function () {
+    return view('direccionrender');
+})->name('direccionrender');

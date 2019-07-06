@@ -10,14 +10,14 @@
                     <div class="card-body">
                         <div>
                             <label>
-                                AutoComplete
-                                <GmapAutocomplete @place_changed="setPlace" :options="opciones" >
+                                Autocompletador
+                                <GmapAutocomplete @place_changed="setPlace" :options="opciones">
                                 </GmapAutocomplete>
-                                <button @click="usePlace">Add</button>
+                                <button @click="usePlace" class="btn btn-primary">Agregar</button>
                             </label>
                             <br />
 
-                            <GmapMap style="width: 100; height: 500px;" :center="center" :zoom="16" mapTypeId="terrain">
+                            <GmapMap style="width: 100; height: 500px;" :center="center" :zoom="18" mapTypeId="terrain">
                                 <GmapMarker v-for="(marker, index) in markers" :key="index"
                                     :position="marker.position" />
                                 <GmapMarker v-if="this.place" label="★" :position="{

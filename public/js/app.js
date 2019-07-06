@@ -1929,6 +1929,45 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/DireccionRender.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/DireccionRender.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _DirectionsRenderer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../DirectionsRenderer */ "./resources/js/DirectionsRenderer.js");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      center: {
+        lat: 4.6492811,
+        lng: -74.1608991
+      },
+      direccions: {}
+    };
+  },
+  components: {
+    DirectionsRenderer: _DirectionsRenderer__WEBPACK_IMPORTED_MODULE_0__["default"]
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Maps.vue?vue&type=script&lang=js&":
 /*!***************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Maps.vue?vue&type=script&lang=js& ***!
@@ -38232,16 +38271,21 @@ var render = function() {
                   "label",
                   [
                     _vm._v(
-                      "\n                            AutoComplete\n                            "
+                      "\n                            Autocompletador\n                            "
                     ),
                     _c("GmapAutocomplete", {
                       attrs: { options: _vm.opciones },
                       on: { place_changed: _vm.setPlace }
                     }),
                     _vm._v(" "),
-                    _c("button", { on: { click: _vm.usePlace } }, [
-                      _vm._v("Add")
-                    ])
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-primary",
+                        on: { click: _vm.usePlace }
+                      },
+                      [_vm._v("Agregar")]
+                    )
                   ],
                   1
                 ),
@@ -38254,7 +38298,7 @@ var render = function() {
                     staticStyle: { width: "100", height: "500px" },
                     attrs: {
                       center: _vm.center,
-                      zoom: 16,
+                      zoom: 18,
                       mapTypeId: "terrain"
                     }
                   },
@@ -38305,6 +38349,44 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/DireccionRender.vue?vue&type=template&id=ea9fff6a&":
+/*!******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/DireccionRender.vue?vue&type=template&id=ea9fff6a& ***!
+  \******************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c(
+        "GmapMap",
+        {
+          staticStyle: { width: "100", height: "500px" },
+          attrs: { zoom: 18, center: _vm.center, directions: _vm.directions }
+        },
+        [_c("DirectionsRenderer"), _vm._v("\n\n    Hola Mundo \n  ")],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Maps.vue?vue&type=template&id=a1514bfc&":
 /*!*******************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Maps.vue?vue&type=template&id=a1514bfc& ***!
@@ -38324,7 +38406,7 @@ var render = function() {
     _c("div", { staticClass: "row justify-content-center" }, [
       _c("div", { staticClass: "col-md-12" }, [
         _c("div", { staticClass: "card" }, [
-          _c("div", { staticClass: "card-header" }, [_vm._v("Mapa")]),
+          _c("div", { staticClass: "card-header" }, [_vm._v("Mapas")]),
           _vm._v(" "),
           _c(
             "div",
@@ -38334,11 +38416,11 @@ var render = function() {
                 "GmapMap",
                 {
                   ref: "map",
-                  staticStyle: { width: "100", height: "300px" },
+                  staticStyle: { width: "100", height: "500px" },
                   attrs: {
                     options: _vm.opciones,
                     center: _vm.center,
-                    zoom: 16,
+                    zoom: 18,
                     mapTypeId: "hybrid"
                   }
                 },
@@ -53044,6 +53126,65 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./resources/js/DirectionsRenderer.js":
+/*!********************************************!*\
+  !*** ./resources/js/DirectionsRenderer.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue2_google_maps__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue2-google-maps */ "./node_modules/vue2-google-maps/dist/main.js");
+/* harmony import */ var vue2_google_maps__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue2_google_maps__WEBPACK_IMPORTED_MODULE_0__);
+// DirectionsRenderer.js
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(vue2_google_maps__WEBPACK_IMPORTED_MODULE_0__["MapElementFactory"])({
+  name: 'directionsRenderer',
+  ctr: function ctr() {
+    return google.maps.DirectionsRenderer;
+  },
+  //// The following is optional, but necessary if the constructor takes multiple arguments
+  //// e.g. for GroundOverlay
+  // ctrArgs: (options, otherProps) => [options],
+  events: ['directions_changed'],
+  // Mapped Props will automatically set up
+  //   this.$watch('propertyName', (v) => instance.setPropertyName(v))
+  //
+  // If you specify `twoWay`, then it also sets up:
+  //   google.maps.event.addListener(instance, 'propertyName_changed', () => {
+  //     this.$emit('propertyName_changed', instance.getPropertyName())
+  //   })
+  //
+  // If you specify `noBind`, then neither will be set up. You should manually
+  // create your watchers in `afterCreate()`.
+  mappedProps: {
+    routeIndex: {
+      type: Number
+    },
+    options: {
+      type: Object
+    },
+    panel: {},
+    directions: {
+      type: Object
+    } //// If you have a property that comes with a `_changed` event,
+    //// you can specify `twoWay` to automatically bind the event, e.g. Map's `zoom`:
+    // zoom: {type: Number, twoWay: true}
+
+  },
+  // Any other properties you want to bind. Note: Must be in Object notation
+  props: {},
+  // Actions you want to perform before creating the object instance using the
+  // provided constructor (for example, you can modify the `options` object).
+  // If you return a promise, execution will suspend until the promise resolves
+  beforeCreate: function beforeCreate(options) {},
+  // Actions to perform after creating the object instance.
+  afterCreate: function afterCreate(directionsRendererInstance) {}
+}));
+
+/***/ }),
+
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -53098,6 +53239,7 @@ Vue.use(vue2_google_maps__WEBPACK_IMPORTED_MODULE_0__, {
 
 Vue.component('maps-component', __webpack_require__(/*! ./components/Maps */ "./resources/js/components/Maps.vue")["default"]);
 Vue.component('autocomplete-component', __webpack_require__(/*! ./components/Autocomplete */ "./resources/js/components/Autocomplete.vue")["default"]);
+Vue.component('direccion-render-component', __webpack_require__(/*! ./components/DireccionRender */ "./resources/js/components/DireccionRender.vue")["default"]);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -53232,6 +53374,76 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Autocomplete_vue_vue_type_template_id_c191a05a___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Autocomplete_vue_vue_type_template_id_c191a05a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/DireccionRender.vue":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/DireccionRender.vue ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _DireccionRender_vue_vue_type_template_id_ea9fff6a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DireccionRender.vue?vue&type=template&id=ea9fff6a& */ "./resources/js/components/DireccionRender.vue?vue&type=template&id=ea9fff6a&");
+/* harmony import */ var _DireccionRender_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DireccionRender.vue?vue&type=script&lang=js& */ "./resources/js/components/DireccionRender.vue?vue&type=script&lang=js&");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _DireccionRender_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _DireccionRender_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _DireccionRender_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _DireccionRender_vue_vue_type_template_id_ea9fff6a___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _DireccionRender_vue_vue_type_template_id_ea9fff6a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/DireccionRender.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/DireccionRender.vue?vue&type=script&lang=js&":
+/*!******************************************************************************!*\
+  !*** ./resources/js/components/DireccionRender.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DireccionRender_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./DireccionRender.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/DireccionRender.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DireccionRender_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/DireccionRender.vue?vue&type=template&id=ea9fff6a&":
+/*!************************************************************************************!*\
+  !*** ./resources/js/components/DireccionRender.vue?vue&type=template&id=ea9fff6a& ***!
+  \************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DireccionRender_vue_vue_type_template_id_ea9fff6a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./DireccionRender.vue?vue&type=template&id=ea9fff6a& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/DireccionRender.vue?vue&type=template&id=ea9fff6a&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DireccionRender_vue_vue_type_template_id_ea9fff6a___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DireccionRender_vue_vue_type_template_id_ea9fff6a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

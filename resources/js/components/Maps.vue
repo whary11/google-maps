@@ -3,11 +3,11 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">Mapa</div>
+                    <div class="card-header">Mapas</div>
 
                     <div class="card-body">
-                        <GmapMap :options="opciones" :center="center" :zoom="16" mapTypeId="hybrid"
-                            style="width: 100; height: 300px" ref="map">
+                        <GmapMap :options="opciones" :center="center" :zoom="18" mapTypeId="hybrid"
+                            style="width: 100; height: 500px" ref="map">
                             <GmapMarker :key="index" v-for="(m, index) in markers" :position="m.position"
                                 :clickable="true" :draggable="true" @click="center=m.position" />
                         </GmapMap>
