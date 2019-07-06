@@ -41,13 +41,13 @@
             return {
                 opciones: {
                     //Delimitar la zona de busqueda
-                    bounds: {
-                        east: 104,
-                        north: 1.4,
-                        south: 1.2,
-                        west: 102,
+                    // bounds: {
+                    //     east: 104,
+                    //     north: 1.4,
+                    //     south: 1.2,
+                    //     west: 102,
 
-                    },
+                    // },
                     strictBounds: true
                 },
                 markers: [],
