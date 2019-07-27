@@ -1,6 +1,4 @@
 <template>
-
-
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-md-12">
@@ -20,11 +18,8 @@
                             <GmapMap style="width: 100; height: 500px;" :center="center" :zoom="18" mapTypeId="terrain">
                                 <GmapMarker v-for="(marker, index) in markers" :key="index"
                                     :position="marker.position" />
-                                <GmapMarker v-if="this.place" label="★" :position="{
-          lat: this.place.geometry.location.lat(),
-          lng: this.place.geometry.location.lng(),
-        }" />
-                                <GmapMarker :position="center"  title="Hola Casa de perros aquí."  icon="https://66.media.tumblr.com/01becf9e10af0993213d6421ca0d24ae/tumblr_inline_mvhhztLX2k1qid2nw.gif"/>
+                                <GmapMarker v-if="this.place" label="★" :position="{lat: this.place.geometry.location.lat(), lng: this.place.geometry.location.lng(),}" />
+                                <GmapMarker v-model="prod" :position="center"  title="Hola Casa de perros aquí."  icon="https://66.media.tumblr.com/01becf9e10af0993213d6421ca0d24ae/tumblr_inline_mvhhztLX2k1qid2nw.gif"/>
                             </GmapMap>
                         </div>
                     </div>
@@ -88,7 +83,7 @@
                     })
                     this.place = null;
                 }else{
-                    console.log('La dirección está en el rango de busqueda');
+                    alert('La dirección está en el rango de busqueda');
                     
                 }
             }

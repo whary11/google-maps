@@ -1870,11 +1870,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -1921,7 +1916,7 @@ __webpack_require__.r(__webpack_exports__);
         });
         this.place = null;
       } else {
-        console.log('La dirección está en el rango de busqueda');
+        alert('La dirección está en el rango de busqueda');
       }
     }
   }
@@ -1950,10 +1945,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
+      // html:'asdjhasglfdg',
       center: {
         lat: 4.6492811,
         lng: -74.1608991
@@ -38328,6 +38329,13 @@ var render = function() {
                         title: "Hola Casa de perros aquí.",
                         icon:
                           "https://66.media.tumblr.com/01becf9e10af0993213d6421ca0d24ae/tumblr_inline_mvhhztLX2k1qid2nw.gif"
+                      },
+                      model: {
+                        value: _vm.prod,
+                        callback: function($$v) {
+                          _vm.prod = $$v
+                        },
+                        expression: "prod"
                       }
                     })
                   ],

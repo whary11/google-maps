@@ -50,7 +50,6 @@ Vue.component('maps-component', require('./components/Maps').default);
 Vue.component('autocomplete-component', require('./components/Autocomplete').default);
 Vue.component('direccion-render-component', require('./components/DireccionRender').default);
 
-
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
