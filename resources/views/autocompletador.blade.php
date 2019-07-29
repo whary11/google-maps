@@ -42,8 +42,10 @@
             </div>
 
             <div id="app">
-                    <autocomplete-component></autocomplete-component>
+                    {{-- <autocomplete-component></autocomplete-component> --}}
                 {{-- <maps-component></maps-component> --}}
+                {{ csrf_field() }}
+                <prueba-imagen></prueba-imagen>
             </div>
         </div>
     </body>

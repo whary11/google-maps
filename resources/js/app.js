@@ -8,6 +8,7 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 import * as VueGoogleMaps from 'vue2-google-maps'
+import { Cropper } from 'vue-advanced-cropper'
  
 Vue.use(VueGoogleMaps, {
   load: {
@@ -49,6 +50,9 @@ Vue.use(VueGoogleMaps, {
 Vue.component('maps-component', require('./components/Maps').default);
 Vue.component('autocomplete-component', require('./components/Autocomplete').default);
 Vue.component('direccion-render-component', require('./components/DireccionRender').default);
+Vue.component('prueba-imagen', require('./components/PruebaImage').default);
+Vue.component('imagen', require('./components/Imagen').default);
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

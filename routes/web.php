@@ -1,4 +1,5 @@
 <?php
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -10,6 +11,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::post('/files/upload', 'ImagenController@uploadImagen');
 
 Route::get('/', function () {
     return view('maps');
