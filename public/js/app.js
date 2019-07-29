@@ -2047,6 +2047,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -2056,6 +2059,25 @@ __webpack_require__.r(__webpack_exports__);
     return {
       userAvatar: undefined,
       img: null,
+      options: {
+        width: 300,
+        height: 300
+      },
+      cropperOptions: {
+        aspectRatio: 1,
+        autoCropArea: 1,
+        viewMode: 1,
+        movable: false,
+        zoomable: false,
+        height: '700',
+        width: '1000',
+        maxHeight: '700',
+        maxWidth: '1000'
+      },
+      labels: {
+        submit: "Cargar",
+        cancel: "Cancelar"
+      },
       datos: {
         nombre: 'Luis Raga',
         _token: document.head.querySelector('meta[name="csrf-token"]').content
@@ -38666,18 +38688,21 @@ var render = function() {
     "div",
     { staticClass: "text-center" },
     [
-      _vm.userAvatar ? _c("img", { attrs: { src: _vm.userAvatar } }) : _vm._e(),
-      _vm._v(" "),
       _c(
         "button",
         { staticClass: "btn btn-success", attrs: { id: "pick-avatar" } },
         [_vm._v("Selccionar imagen")]
       ),
       _vm._v(" "),
-      _vm.img ? _c("img", { attrs: { src: _vm.img, alt: "" } }) : _vm._e(),
+      _c("div", { staticClass: "row justify-content-center" }, [
+        _vm.img ? _c("img", { attrs: { src: _vm.img, alt: "" } }) : _vm._e()
+      ]),
       _vm._v(" "),
       _c("avatar-cropper", {
         attrs: {
+          "output-options": _vm.options,
+          labels: _vm.labels,
+          "cropper-options": _vm.cropperOptions,
           trigger: "#pick-avatar",
           "upload-form-data": _vm.datos,
           "upload-url": "/files/upload"
