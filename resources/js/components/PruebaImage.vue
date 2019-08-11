@@ -6,10 +6,12 @@
 
     <img :src="img" alt="" v-if="img">
     </div>
+  <barcode value="123456789012" :options="{ displayValue: false, format: 'EAN13'}"></barcode>
     <avatar-cropper :output-options="options" :labels="labels" :cropper-options="cropperOptions"
       @uploaded="handleUploaded"
       trigger="#pick-avatar" :upload-form-data="datos" upload-url="/files/upload"/>
   </div>
+
 </template>
 
 <script>
@@ -41,6 +43,9 @@
           }
       }
     },
+    mounted() {
+      this.pruebaPeticionGet()
+    },
     methods: {
       handleUploading(form, xhr) {
             form.append('foo', 'bar')
@@ -65,6 +70,16 @@
           if (type == 'upload') {
             // xhr.response...
           }
+        },
+
+        pruebaPeticionGet(){
+          axios.get('pruebapeticionget',{params:{name:'luisraga'}})
+          .then( (resp) => {
+            console.log(resp.data);
+            
+          })
+          .catch(function (error) {
+          })
         }
         
     }

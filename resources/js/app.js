@@ -9,6 +9,8 @@ require('./bootstrap');
 window.Vue = require('vue');
 import * as VueGoogleMaps from 'vue2-google-maps'
 import { Cropper } from 'vue-advanced-cropper'
+import JsonExcel from 'vue-json-excel'
+Vue.component('downloadExcel', JsonExcel)
  
 Vue.use(VueGoogleMaps, {
   load: {
@@ -21,6 +23,10 @@ Vue.use(VueGoogleMaps, {
     //// If you want to set the version, you can do so:
     // v: '3.26',
   },
+
+  
+
+
  
   //// If you intend to programmatically custom event listener code
   //// (e.g. `this.$refs.gmap.$on('zoom_changed', someFunc)`)
@@ -34,6 +40,13 @@ Vue.use(VueGoogleMaps, {
   //// then disable the following:
   // installComponents: true,
 })
+
+import VuePaginate from 'vue-paginate'
+Vue.use(VuePaginate)
+
+import VueBarcode from '@chenfengyuan/vue-barcode';
+
+Vue.component(VueBarcode.name, VueBarcode);
 
 
 /**
@@ -52,6 +65,11 @@ Vue.component('autocomplete-component', require('./components/Autocomplete').def
 Vue.component('direccion-render-component', require('./components/DireccionRender').default);
 Vue.component('prueba-imagen', require('./components/PruebaImage').default);
 Vue.component('imagen', require('./components/Imagen').default);
+Vue.component('data-table', require('./components/DataTable').default);
+Vue.component('drag-drop', require('./components/DragAndDrop.vue').default);
+Vue.component('slot-com', require('./components/Slot').default);
+Vue.component('pruebas-com', require('./components/PruebasComponentes').default);
+
 
 
 /**

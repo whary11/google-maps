@@ -13,6 +13,11 @@ use Illuminate\Http\Request;
 */
 
 Route::post('/files/upload', 'ImagenController@uploadImagen');
+Route::get('/pruebapeticionget', function(Request $request){
+    return $request->name;
+});
+
+// pruebapeticionget
 
 Route::get('/', function () {
     return view('maps');
