@@ -5609,7 +5609,7 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['clase'],
+  props: ['clases'],
   data: function data() {
     return {
       NUM_RESULTS: 10,
@@ -5634,42 +5634,6 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
         id: 3,
         nombre: 'Omar',
         apellidos: 'Raga1'
-      }, {
-        id: 4,
-        nombre: 'Rosa',
-        apellidos: 'Renteria1'
-      }, {
-        id: 5,
-        nombre: 'Luis Fernando',
-        apellidos: 'Raga Renteria1'
-      }, {
-        id: 6,
-        nombre: 'Kat',
-        apellidos: 'Leon Ospina1'
-      }, {
-        id: 7,
-        nombre: 'Omar',
-        apellidos: 'Raga1'
-      }, {
-        id: 8,
-        nombre: 'Rosa',
-        apellidos: 'Renteria1'
-      }, {
-        id: 9,
-        nombre: 'Luis Fernando',
-        apellidos: 'Raga Renteria1'
-      }, {
-        id: 10,
-        nombre: 'Kat',
-        apellidos: 'Leon Ospina1'
-      }, {
-        id: 11,
-        nombre: 'Omar',
-        apellidos: 'Raga1'
-      }, {
-        id: 12,
-        nombre: 'Rosa',
-        apellidos: 'Renteria1'
       }],
       search: null,
       paginate: ['getData']
@@ -45660,7 +45624,7 @@ var render = function() {
           attrs: { name: "getData", tag: "div", list: _vm.getData }
         },
         [
-          _c("table", { class: _vm.clase }, [
+          _c("table", { class: _vm.clases }, [
             _c("thead", [
               _c(
                 "tr",
@@ -45712,7 +45676,7 @@ var render = function() {
                       [_vm._v("Opciones")]
                     ),
                     _vm._v(" "),
-                    _vm._t("td")
+                    _vm._t("td", null, null, row)
                   ],
                   2
                 )
@@ -45986,23 +45950,61 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("slot-com", {
-        scopedSlots: _vm._u([
-          {
-            key: "header",
-            fn: function() {
-              return [_vm._v("\n            Hola header\n        ")]
+  return _c("div", [
+    _c(
+      "div",
+      { staticClass: "col-sm-12" },
+      [
+        _c("data-table", {
+          attrs: {
+            clases: "table table-bordered table-sm table-hover table-centered"
+          },
+          scopedSlots: _vm._u([
+            {
+              key: "th",
+              fn: function() {
+                return [
+                  _c("td", [
+                    _vm._v(
+                      "\n                        Progreso\n                    "
+                    )
+                  ])
+                ]
+              },
+              proxy: true
             },
-            proxy: true
-          }
-        ])
-      })
-    ],
-    1
-  )
+            {
+              key: "td",
+              fn: function(row) {
+                return [
+                  _c("td", [
+                    _c("div", { staticClass: "progress" }, [
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "progress-bar progress-bar-striped progress-bar-animated",
+                          staticStyle: { width: "45%" },
+                          attrs: {
+                            role: "progressbar",
+                            "aria-valuenow": "25",
+                            "aria-valuemin": "0",
+                            "aria-valuemax": "100"
+                          }
+                        },
+                        [_vm._v("45% " + _vm._s(row.nombre) + " ")]
+                      )
+                    ])
+                  ])
+                ]
+              }
+            }
+          ])
+        })
+      ],
+      1
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -65390,8 +65392,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/lraga/Sites/googlemapslaravel/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/lraga/Sites/googlemapslaravel/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/lraga/Sites/pruebas-componentes/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/lraga/Sites/pruebas-componentes/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

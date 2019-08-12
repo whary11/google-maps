@@ -7,7 +7,7 @@
             <input type="text" class="form-control" v-model="search">
         </div>
         <paginate name="getData" tag="div" :list="getData" class="paginate-list">
-            <table :class="clase">
+            <table :class="clases">
                 <thead>
                     <tr>
                         <th v-for="(item, index) of header" :key="index">{{item}}</th>
@@ -21,7 +21,7 @@
                         v-show="(pag - 1) * NUM_RESULTS <= index  && pag * NUM_RESULTS > index">
                         <td v-for="(item, index) in row" :key="index">{{item}}</td>
                         <td @click.prevent="addEvent(row)">Opciones</td>
-                        <slot name="td">
+                        <slot name="td"  v-bind="row">
 
                         </slot>
                     </tr>
@@ -46,7 +46,7 @@
 </template>
 <script>
     export default {
-        props: ['clase'],
+        props: ['clases'],
         data() {
             return {
                 NUM_RESULTS: 10, // Numero de resultados por página
@@ -57,7 +57,8 @@
                     apellidos: 'Apellidos',
                     opciones: 'Opciones'
                 },
-                rows: [{
+                rows: [
+                    {
                         id: 1,
                         nombre: 'Luis Fernando',
                         apellidos: 'Raga Renteria1',
@@ -72,51 +73,51 @@
                         nombre: 'Omar',
                         apellidos: 'Raga1',
                     },
-                    {
-                        id: 4,
-                        nombre: 'Rosa',
-                        apellidos: 'Renteria1',
-                    },
-                    {
-                        id: 5,
-                        nombre: 'Luis Fernando',
-                        apellidos: 'Raga Renteria1',
-                    },
-                    {
-                        id: 6,
-                        nombre: 'Kat',
-                        apellidos: 'Leon Ospina1',
-                    },
-                    {
-                        id: 7,
-                        nombre: 'Omar',
-                        apellidos: 'Raga1',
-                    },
-                    {
-                        id: 8,
-                        nombre: 'Rosa',
-                        apellidos: 'Renteria1',
-                    },
-                    {
-                        id: 9,
-                        nombre: 'Luis Fernando',
-                        apellidos: 'Raga Renteria1',
-                    },
-                    {
-                        id: 10,
-                        nombre: 'Kat',
-                        apellidos: 'Leon Ospina1',
-                    },
-                    {
-                        id: 11,
-                        nombre: 'Omar',
-                        apellidos: 'Raga1',
-                    },
-                    {
-                        id: 12,
-                        nombre: 'Rosa',
-                        apellidos: 'Renteria1',
-                    },
+                    // {
+                    //     id: 4,
+                    //     nombre: 'Rosa',
+                    //     apellidos: 'Renteria1',
+                    // },
+                    // {
+                    //     id: 5,
+                    //     nombre: 'Luis Fernando',
+                    //     apellidos: 'Raga Renteria1',
+                    // },
+                    // {
+                    //     id: 6,
+                    //     nombre: 'Kat',
+                    //     apellidos: 'Leon Ospina1',
+                    // },
+                    // {
+                    //     id: 7,
+                    //     nombre: 'Omar',
+                    //     apellidos: 'Raga1',
+                    // },
+                    // {
+                    //     id: 8,
+                    //     nombre: 'Rosa',
+                    //     apellidos: 'Renteria1',
+                    // },
+                    // {
+                    //     id: 9,
+                    //     nombre: 'Luis Fernando',
+                    //     apellidos: 'Raga Renteria1',
+                    // },
+                    // {
+                    //     id: 10,
+                    //     nombre: 'Kat',
+                    //     apellidos: 'Leon Ospina1',
+                    // },
+                    // {
+                    //     id: 11,
+                    //     nombre: 'Omar',
+                    //     apellidos: 'Raga1',
+                    // },
+                    // {
+                    //     id: 12,
+                    //     nombre: 'Rosa',
+                    //     apellidos: 'Renteria1',
+                    // },
                 ],
                 search: null,
                 paginate: ['getData']

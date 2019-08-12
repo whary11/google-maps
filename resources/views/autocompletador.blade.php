@@ -47,25 +47,7 @@
             {{-- <autocomplete-component></autocomplete-component> --}}
             {{-- <maps-component></maps-component> --}}
             {{ csrf_field() }}
-            <div class="col-sm-12">
-                <data-table clase="table table-bordered table-sm table-hover table-centered">
-                        {{-- <template #th>
-                                <td>
-                                    algo
-                                </td>
-                            </template>
-
-                    <template #td>
-                        <td>
-                            Hola
-                        </td>
-                    </template> --}}
-                    
-                </data-table>
-
-                {{-- <pruebas-com/> --}}
-
-            </div>
+            <pruebas-com></pruebas-com>
         </div>
     </div>
 </body>
